@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>CustomFeature</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-dog></app-dog>
+
+  <app-cat></app-cat>
+
+  <div *ngIf="isLoading$ | async; else content">Loading...</div>
+  <ng-template #content>
+    <app-d3-line-chart
+      [data]="data"
+      [fill-color]="fillColor"
+    ></app-d3-line-chart>
+  </ng-template>
+
+  <ion-button (click)="onlyCats()">onlyCats</ion-button>
+</ion-content>

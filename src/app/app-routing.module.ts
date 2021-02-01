@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'custom-feature',
+    loadChildren: () => import('./pages/custom-feature/custom-feature.module').then( m => m.CustomFeaturePageModule)
+  },
 ];
 
 @NgModule({
